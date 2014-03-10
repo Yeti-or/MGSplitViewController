@@ -247,7 +247,8 @@
 	}
 	
 	// Account for status bar, which always subtracts from the height (since it's always at the top of the screen).
-	height -= statusBarHeight;
+    height -= ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] != NSOrderedDescending)
+        ? statusBarHeight : 0;
 	
 	return CGSizeMake(width, height);
 }
