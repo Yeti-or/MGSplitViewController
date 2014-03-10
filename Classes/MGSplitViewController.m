@@ -510,6 +510,10 @@
 	_reconfigurePopup = YES;
 }
 
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    [self layoutSubviews];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -519,7 +523,6 @@
 		[self.masterViewController viewDidAppear:animated];
 	}
 	[self.detailViewController viewDidAppear:animated];
-	[self layoutSubviews];
 }
 
 
